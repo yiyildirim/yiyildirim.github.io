@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic CV of Yiğit Yıldırım, Ph.D. student in Electrical and Computer Engineering at UC San Diego." />
+  <title>Yiğit Yıldırım | Academic CV</title>
+
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --accent: #145ea8;
+      --accent-dark: #0d457d;
+      --border: #dde3eb;
+      --tag: #eef4fb;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 36px auto 64px;
+    }
+
+    header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: 0 8px 28px rgba(18, 31, 53, 0.06);
+    }
+
+    .name {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 3.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .headline {
+      margin: 12px 0 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 20px;
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
+
+    nav {
+      margin: 18px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 650;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin-top: 18px;
+      box-shadow: 0 8px 28px rgba(18, 31, 53, 0.045);
+    }
+
+    h2 {
+      margin: 0 0 22px;
+      font-size: 1.35rem;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .entry {
+      padding: 0 0 24px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .entry:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .entry-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px 24px;
+      align-items: baseline;
+    }
+
+    .institution,
+    .role {
+      font-weight: 700;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.94rem;
+      white-space: nowrap;
+    }
+
+    .subline {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 21px;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .pub-group + .pub-group {
+      margin-top: 26px;
+    }
+
+    .pub-group h3 {
+      margin-bottom: 12px;
+    }
+
+    .publication {
+      margin: 0 0 14px;
+    }
+
+    .publication:last-child {
+      margin-bottom: 0;
+    }
+
+    .doi {
+      word-break: break-word;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 28px;
+    }
+
+    .skill strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      background: var(--tag);
+      color: #234c73;
+      border: 1px solid #d5e4f2;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 20px, var(--max-width));
+        margin-top: 14px;
+      }
+
+      header,
+      section {
+        border-radius: 14px;
+        padding: 22px;
+      }
+
+      .entry-head {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .meta {
+        white-space: normal;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+
+      header,
+      section {
+        box-shadow: none;
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      nav {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1 class="name">Yiğit Yıldırım</h1>
+      <p class="headline">
+        Ph.D. Student in Electrical and Computer Engineering · UC San Diego
+      </p>
+
+      <div class="contact">
+        <span><a href="mailto:yigit.yildirim@bilkent.edu.tr">yigit.yildirim@bilkent.edu.tr</a></span>
+        <span><a href="mailto:yigityldrm06@gmail.com">yigityldrm06@gmail.com</a></span>
+        <span>+90 543 418 19 46</span>
+        <span>LinkedIn</span>
+      </div>
+    </header>
+
+    <nav aria-label="CV sections">
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+    </nav>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>University of California San Diego</h3>
+            <div class="subline">Ph.D. in Electrical and Computer Engineering · San Diego, California</div>
+          </div>
+          <div class="meta">August 2026 – Present</div>
+        </div>
+        <ul>
+          <li>
+            Research interests include goal-oriented and semantic communications,
+            AI/RL for communications, connected autonomy, and B5G/6G systems.
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Bilkent University</h3>
+            <div class="subline">M.Sc. in Electrical and Electronics Engineering · Ankara, Turkey</div>
+          </div>
+          <div class="meta">September 2023 – August 2026</div>
+        </div>
+        <ul>
+          <li><strong>CGPA:</strong> 4.00/4.00</li>
+          <li>
+            <strong>Research Focus:</strong> Goal-Oriented Communications,
+            Semantic Communications, AI/RL for Communications, B5G
+          </li>
+          <li>
+            <strong>Thesis:</strong> Effective Communication for Robust Action Planning
+            in Sensor-Agent Networks
+          </li>
+          <li><strong>Advisor:</strong> Prof. Orhan Arıkan</li>
+          <li>
+            <strong>Teaching Assistantship:</strong>
+            EEE 212 – Microprocessors; EEE 431 – Digital Communications;
+            EEE 432/530 – Advanced Digital Communications;
+            EEE 485/585 – Statistical Learning and Data Analytics;
+            EEE 634 – Information Theory; EEE 525 – Advanced Signal Processing;
+            EEE 533 – Random Processes
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Bilkent University</h3>
+            <div class="subline">B.Sc. in Electrical and Electronics Engineering · Ankara, Turkey</div>
+          </div>
+          <div class="meta">September 2019 – June 2023</div>
+        </div>
+        <ul>
+          <li><strong>CGPA:</strong> 3.83/4.00</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>KG Teknoloji — Massive IoT Research Project</h3>
+            <div class="subline">Research Engineer · Ankara, Turkey</div>
+          </div>
+          <div class="meta">February 2024 –</div>
+        </div>
+        <ul>
+          <li>Developed and simulated novel communication frameworks for goal-oriented effective communications.</li>
+          <li>Introduced MDP/POMDP formulations to communications problems.</li>
+          <li>Developed and simulated adaptive methods for packet prioritization in Random Access Channels.</li>
+          <li>Developed an in-house V2X emulator to superpose real-world detections with a virtual agent.</li>
+          <li>Trained a MAMBA architecture to predict pedestrian motion.</li>
+          <li>
+            Developed custom prompts and processing chains via LangChain using distilled
+            DeepSeek versions to achieve sensor fusion at the Base Station for
+            goal-oriented semantic uplink communication.
+          </li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Turkish Aerospace Industry (TAI)</h3>
+            <div class="subline">Intern · Ankara, Turkey</div>
+          </div>
+          <div class="meta">June 2022 – July 2022</div>
+        </div>
+        <ul>
+          <li>Internship in the UAV department.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>CyBORG @ Bilkent</h3>
+            <div class="subline">Voluntary Undergraduate Researcher &amp; Intern · Ankara, Turkey</div>
+          </div>
+          <div class="meta">January 2021 – December 2022</div>
+        </div>
+        <ul>
+          <li>Conducted a literature review on Multi-Armed Bandit problems.</li>
+          <li>
+            Developed and simulated a novel robust aggregation method for Federated
+            Multi-Armed Bandits under Byzantine attacks.
+          </li>
+          <li>Performed theoretical convergence analysis of the proposed algorithm.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <div class="pub-group">
+        <h3>Journal Articles</h3>
+        <p class="publication">
+          A. Saday, İ. Demirel, <strong>Y. Yıldırım</strong>, and C. Tekin,
+          “Federated multi-armed bandits under byzantine attacks,”
+          <em>IEEE Transactions on Artificial Intelligence</em>, pp. 1–14, 2025.
+          <span class="doi">doi:
+            <a href="https://doi.org/10.1109/TAI.2024.3524954">
+              10.1109/TAI.2024.3524954
+            </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="pub-group">
+        <h3>Conference Proceedings</h3>
+
+        <p class="publication">
+          <strong>Y. Yildirim</strong>, B. Uykulu, M. I. Caliskan, et al.,
+          “Priority assignment of packets in sensor nodes for goal-oriented semantic communications,”
+          in <em>2026 IEEE International Conference on Communications (IEEE ICC)</em>
+          (Accepted), 2026.
+        </p>
+
+        <p class="publication">
+          <strong>Y. Yildirim</strong> and O. Arikan,
+          “A Goal-Oriented Effective Communication Scheme via Action Innovations,”
+          <em>2025 IEEE 36th International Symposium on Personal, Indoor and Mobile Radio
+          Communications (PIMRC)</em>, Istanbul, Turkiye, 2025, pp. 1–6.
+          <span class="doi">doi:
+            <a href="https://doi.org/10.1109/PIMRC62392.2025.11274615">
+              10.1109/PIMRC62392.2025.11274615
+            </a>
+          </span>
+        </p>
+
+        <p class="publication">
+          <strong>Y. Yildirim</strong> and O. Arıkan,
+          “Clustering of high dimensional datasets with random orthogonal projections,”
+          in <em>2025 33rd Signal Processing and Communications Applications Conference (SIU)</em>,
+          2025, pp. 1–4.
+          <span class="doi">doi:
+            <a href="https://doi.org/10.1109/SIU66497.2025.11112049">
+              10.1109/SIU66497.2025.11112049
+            </a>
+          </span>
+        </p>
+
+        <p class="publication">
+          A. Ozdemir, O. Soysal, E. Doganay, <strong>Y. Yildirim</strong>, and O. Arikan,
+          “Low-Rank Compression of Neural Network Weights by Null-Space Encouragement,”
+          <em>2025 Asia Pacific Signal and Information Processing Association Annual Summit
+          and Conference (APSIPA ASC)</em>, Singapore, 2025, pp. 1194–1199.
+          <span class="doi">doi:
+            <a href="https://doi.org/10.1109/APSIPAASC65261.2025.11249299">
+              10.1109/APSIPAASC65261.2025.11249299
+            </a>
+          </span>
+        </p>
+
+        <p class="publication">
+          O. Soysal, A. Ozdemir, <strong>Y. Yildirim</strong>, and O. Arikan,
+          “Monomial Matrix Relocation on the Loss Function Level-Set of Feedforward Neural Networks,”
+          <em>2025 Asia Pacific Signal and Information Processing Association Annual Summit
+          and Conference (APSIPA ASC)</em>, Singapore, 2025, pp. 1188–1193.
+          <span class="doi">doi:
+            <a href="https://doi.org/10.1109/APSIPAASC65261.2025.11249160">
+              10.1109/APSIPAASC65261.2025.11249160
+            </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="pub-group">
+        <h3>Posters &amp; Presentations</h3>
+
+        <p class="publication">
+          <strong>Y. Yildirim</strong> and O. Arikan,
+          “A goal-oriented effective communication scheme via action innovations,”
+          presented at the 2025 Bilkent Graduate Research Conference (GRC), 2025.
+        </p>
+
+        <p class="publication">
+          <strong>Y. Yildirim</strong> and O. Arikan,
+          “A goal-oriented effective communication scheme via action innovations,”
+          poster at the Science Academy – Bilkent Semantic Communications Summer School, 2025.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Professional Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill">
+          <strong>Programming</strong>
+          Excellent Python, MATLAB &amp; LaTeX. Intermediate C, C++, VHDL,
+          Arm Mbed, and Assembly.
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">LaTeX</span>
+            <span class="tag">C/C++</span>
+          </div>
+        </div>
+
+        <div class="skill">
+          <strong>Platforms &amp; Packages</strong>
+          CARLA, Gazebo, rai, ROS, PyTorch, TensorFlow, CARLA Python API,
+          Unsloth, LangGraph / LangSmith, NumPy, pandas, SciPy, matplotlib.
+        </div>
+
+        <div class="skill">
+          <strong>AI / ML / RL</strong>
+          MAMBA, model distillation, neural networks, autonomous driving,
+          LLMs, agents, and AI in telecommunications.
+        </div>
+
+        <div class="skill">
+          <strong>Communications</strong>
+          Network analysis, 6G, latency, random access, and IoT.
+        </div>
+
+        <div class="skill">
+          <strong>Control &amp; Robotics</strong>
+          MPC and controller design, UAV control, PIXHAWK,
+          optimal stochastic control.
+        </div>
+
+        <div class="skill">
+          <strong>Languages</strong>
+          English (TOEFL: 108), Turkish (Native).
+        </div>
+
+        <div class="skill">
+          <strong>Additional Skills</strong>
+          Analytical thinking, adaptability, scientific writing, teamwork,
+          stress management, leadership, Ubuntu server maintenance.
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="entry">
+        <h3>UYAZ-RC</h3>
+        <p>
+          Autonomous drone capable of landing and human tracking without exterior
+          dependence. Implemented on NVIDIA Jetson Nano using Python as part of an
+          Industrial Design Project.
+        </p>
+      </article>
+
+      <article class="entry">
+        <h3>Signal Converter for UAV Joysticks</h3>
+        <p>
+          Built an Arduino-based intermediary device to pilot a UAV over a telemetry connection.
+        </p>
+      </article>
+
+      <article class="entry">
+        <h3>Object Flipping Robotic Arm</h3>
+        <p>
+          Used the rai package, kinematics, and motion planning to simulate a robotic arm
+          grasping a rectangular object and throwing it so that it lands in a flipped orientation.
+          Formulated the appropriate throwing point and angle.
+        </p>
+      </article>
+    </section>
+
+    <section id="awards">
+      <h2>Awards &amp; Achievements</h2>
+      <ul>
+        <li>Rank 36 (Top 0.001%) in YKS, Turkey Admission to University Exams.</li>
+        <li>Rank 2, XIV. International Science Fundamentals Contest.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Last updated August 2026.
+    </footer>
+  </main>
+</body>
+</html>
